@@ -25,19 +25,19 @@ public class Main {
             //Создание таблицы
             Statement statement = con.createStatement();
             statement.execute("CREATE TABLE people(" +
-                    "id BIGINT IDENTITY(1,1) PRIMARY KEY," +
-                    "name VARCHAR(20) NOT NULL," +
-                    "cash DOUBLE NOT NULL," +
-                    "is_worker BOOLEAN NOT NULL)");
+                    "id BIGINT IDENTITY(1,1) PRIMARY KEY" +
+                    ",name VARCHAR(20) NOT NULL" +
+                    ",cash DOUBLE NOT NULL" +
+                    ",is_worker BOOLEAN NOT NULL)");
             //Заполнение таблицы данными
-            statement.execute("INSERT INT people (" +
-                    "name," +
-                    "cash," +
-                    "is_worker)" +
+            statement.execute("INSERT INTO people (" +
+                    "name" +
+                    ",cash" +
+                    ",is_worker)" +
                     "VALUES (" +
                     "'Alexander Dementev'" +
-                    "19876.60" +
-                    "true)");
+                    ",19876.60" +
+                    ",true)");
             //Получение данных с сервера
             ResultSet result = statement.executeQuery("SELECT * FROM people");
             while (result.next()) {
